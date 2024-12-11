@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Registro de Usuario{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4">Registro de Usuario</h1>
+<form method="post" class="col-md-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="id_username" class="form-label">Nombre de Usuario</label>
+        {{ form.username }}
+    </div>
+    <div class="mb-3">
+        <label for="id_email" class="form-label">Correo electrónico</label>
+        {{ form.email }}
+    </div>
+    <div class="mb-3">
+        <label for="id_password" class="form-label">Contraseña</label>
+        {{ form.password }}
+    </div>
+    <div class="mb-3">
+        <label for="id_password2" class="form-label">Confirmar Contraseña</label>
+        {{ form.password2 }}
+    </div>
+    <button type="submit" class="btn btn-success">Registrarse</button>
+</form>
+{% endblock content %}

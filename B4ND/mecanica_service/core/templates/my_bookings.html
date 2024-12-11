@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Mis Reservas{% endblock title %}
+{% block content %}
+<h1 class="mb-4">Mis Reservas</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Servicio</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for booking in bookings %}
+        <tr>
+            <td>{{ booking.service.name }}</td>
+            <td>{{ booking.date }}</td>
+            <td>{{ booking.get_status_display }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

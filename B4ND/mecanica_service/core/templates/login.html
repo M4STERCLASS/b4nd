@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}Iniciar Sesión{% endblock title %}
+
+{% block content %}
+<h1 class="mb-4">Iniciar Sesión</h1>
+<form method="post" class="col-md-4">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="id_username" class="form-label">Usuario</label>
+        {{ form.username }}
+    </div>
+    <div class="mb-3">
+        <label for="id_password" class="form-label">Contraseña</label>
+        {{ form.password }}
+    </div>
+    <button type="submit" class="btn btn-primary">Ingresar</button>
+</form>
+{% endblock content %}
